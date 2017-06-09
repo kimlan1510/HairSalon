@@ -6,10 +6,10 @@
 @foreach(var client in Model)
 {
   <ul>
-    <li><a href="/clients/@client.GetId()">@client.GetName()</a> | <a href="/client/edit/@client.GetId()">Edit</a> | <a href="/client/delete/@client.GetId()">Delete</a></li>
+    <li><a href="/clients/@client.GetId()">@client.GetName()</a> | <a href="/clients/edit/@client.GetId()">Edit</a> | <a href="/clients/delete/@client.GetId()">Delete</a></li>
   </ul>
 }
-<p><a href="/client/new">Add a new client</a></p>
+<p><a href="/clients/new">Add a new client</a></p>
 <form action="/clients/cleared" method="post">
     <button type="submit">Clear all clients</button>
 </form>
