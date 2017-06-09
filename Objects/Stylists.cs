@@ -130,35 +130,35 @@ namespace HairSalon
       return foundStylists;
     }
 
-    // public List<Clients> GetClients()
-    // {
-    //  SqlConnection conn = DB.Connection();
-    //  conn.Open();
-    //
-    //  SqlCommand cmd = new SqlCommand("SELECT * FROM clients WHERE stylist_id = @StylistId;", conn);
-    //  SqlParameter stylistIdPara = new SqlParameter("@StylistId", this.GetId());
-    //  cmd.Parameters.Add(stylistIdPara);
-    //  SqlDataReader rdr = cmd.ExecuteReader();
-    //
-    //  List<Clients> AllClients = new List<Clients> {};
-    //  while(rdr.Read())
-    //  {
-    //    int ClientId = rdr.GetInt32(0);
-    //    string ClientName = rdr.GetString(1);
-    //    int StylistId = rdr.GetInt32(2);
-    //    Clients newClients = new Clients(ClientName, StylistId, ClientId);
-    //    Clients.Add(newClients);
-    //  }
-    //  if (rdr != null)
-    //  {
-    //    rdr.Close();
-    //  }
-    //  if (conn != null)
-    //  {
-    //    conn.Close();
-    //  }
-    //  return AllClients;
-    // }
+    public List<Clients> GetClients()
+    {
+     SqlConnection conn = DB.Connection();
+     conn.Open();
+
+     SqlCommand cmd = new SqlCommand("SELECT * FROM clients WHERE stylist_id = @StylistId;", conn);
+     SqlParameter stylistIdPara = new SqlParameter("@StylistId", this.GetId());
+     cmd.Parameters.Add(stylistIdPara);
+     SqlDataReader rdr = cmd.ExecuteReader();
+
+     List<Clients> AllClients = new List<Clients> {};
+     while(rdr.Read())
+     {
+       int ClientId = rdr.GetInt32(0);
+       string ClientName = rdr.GetString(1);
+       int StylistId = rdr.GetInt32(2);
+       Clients newClients = new Clients(ClientName, StylistId, ClientId);
+       AllClients.Add(newClients);
+     }
+     if (rdr != null)
+     {
+       rdr.Close();
+     }
+     if (conn != null)
+     {
+       conn.Close();
+     }
+     return AllClients;
+    }
 
 
 
