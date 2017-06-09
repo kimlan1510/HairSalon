@@ -1,5 +1,4 @@
 {
-  "version": "1.0.0-*",
   "dependencies": {
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
     "Microsoft.AspNet.Owin": "1.0.0-*",
@@ -13,6 +12,10 @@
     "test": "xunit.runner.dnx"
   },
   "frameworks": {
-    "dnx451": {}
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Data": "4.0.0.0"
+      }
+    }
   }
 }
