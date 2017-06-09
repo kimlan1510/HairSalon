@@ -26,14 +26,15 @@ _This program allows the users to add stylists to the database and for each styl
 ## Setup/Installation Requirements
 * _This program requires installing C#, Git and asp.net5. Follow the instruction here https://www.learnhowtoprogram.com/c/getting-started-with-c/installing-c to install c# and asp.net5 on your computer._
 * _Download or clone this file using Git._
-* _In Windows PowerShell navigate to the WordCounter folder._
+* _To create a database on your computer, open Windows PowerShell. Type sqlcmd -S "(localdb)\mssqllocaldb"; CREATE DATABASE hair_salon; > GO > USE hair_salon; > GO > CREATE TABLE stylists (id INT IDENTITY(1,1), name VARCHAR(255)); > CREATE TABLE clients (id INT IDENTITY(1,1), name VARCHAR(255), stylist_id INT); > GO
+* _In Windows PowerShell navigate to the HairSalon folder._
 * _Type "dnu restore" in the console to compile Nancy, exclude ""._
 * _Type "dnx kestrel" in the console run the program, exclude ""._
 * _Paste this link http://localhost:5004/ onto your web browser._
 
 ## Known Bugs
 
-_There are no bugs that I am awared of._
+_Creating clients or stylists with the same name will create duplicates._
 
 ## Support and contact details
 
@@ -45,6 +46,7 @@ _Kimlan1510@gmail.com_
 * _C#_
 * _Nancy_
 * _Razor_
+* _MSSQL_
 * _Xunit_
 
 
