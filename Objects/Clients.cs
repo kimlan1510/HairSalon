@@ -143,6 +143,23 @@ namespace HairSalon
       return foundClients;
     }
 
+    public void Update(string newName)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("UPDATE clients SET name = @newName WHERE id = @clientId;", conn);
+
+      SqlParameter newNamePara = new SqlParameter("@newName", newName);
+      SqlParameter clientIdPara = new SqlParameter("@clientId", this.GetId());
+
+      cmd.Parameters.Add(newNamePara);
+      cmd.Parameters.Add(clientIdPara);
+      this._name = newName;
+      cmd.ExecuteNonQuery();
+      conn.Close();
+    }
+
 
 
 
